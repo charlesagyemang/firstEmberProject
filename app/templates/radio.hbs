@@ -1,8 +1,15 @@
 <div class="container">
   <br>
-  <ul>
-    {{#each model as |radio|}}
-      <li>{{radio.name}}, id <a class="btn btn-danger" href={{radio.streamingLink}}>Lisen Live</a></li>
-     {{/each}}
-   </ul>
+
+  {{#if error}}
+    <BsAlert @type="danger">
+      Error: {{error}}
+    </BsAlert>
+    <BsButton @id="kulibali" @type="primary" @onClick={{action "reload"}}>Reload</BsButton>
+  {{/if}}
+
+  {{#each model as |radio|}}
+    {{radio.name}} <a target="_blank" class="btn btn-danger" href={{radio.streamingLink}}>Lisen Live</a><br><br>
+  {{/each}}
+
 </div>
