@@ -1,0 +1,8 @@
+<div class="container">
+  <br>
+  <ul>
+    {{#each model as |radio|}}
+      <li>{{radio.name}}, id <a class="btn btn-danger" href={{radio.streamingLink}}>Lisen Live</a></li>
+     {{/each}}
+   </ul>
+</div>
